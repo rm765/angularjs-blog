@@ -1,0 +1,24 @@
+<div ng-controller="userController" id="user">
+  Witaj, {{ user.username }}
+  <logout><a href="" ng-click="logout()">Wyloguj</a></logout>
+</div>
+<div id="submit">
+Tytuł:
+</br>
+<form name="postForm" novalidate>
+<textarea id='txt_title' placeholder="Wpisz tytuł..." ng-model='title' name="title" ng-required="true"></textarea>
+<div ng-show="postForm.title.$touched && postForm.title.$invalid">
+  <small style="color:red">Proszę wpisać tytuł</small>
+</div>
+</br>
+</br>
+Treść:
+</br>
+<textarea id='txt_content' placeholder="Wpisz treść..." ng-model='content' name="content" ng-required="true"></textarea>
+</br>
+<div ng-show="postForm.content.$touched && postForm.content.$invalid">
+  <small style="color:red">Proszę wpisać treść</small>
+</div>
+<input type='button' id='but_save' value='Dodaj' ng-click="add()" ng-disabled="postForm.$invalid">
+</form>
+</div>

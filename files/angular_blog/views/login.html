@@ -1,0 +1,17 @@
+<div id="login">
+<h2>Logowanie</h2>
+    <form name="logForm" novalidate>
+    <input placeholder="Nazwa użytkownika" type="text" autofocus ng-model="user.username" name="username" required id="textfield">
+    <div ng-show="logForm.username.$touched && logForm.username.$invalid">
+        <small style="color:red">Proszę wpisać nazwę użytkownika</small>
+    </div>
+    <input placeholder="Hasło" type="password" ng-model="user.password" name="password" required id="textfield">
+    <div ng-show="logForm.password.$touched && logForm.password.$invalid">
+        <small style="color:red">Proszę wpisać hasło</small>
+    </div>
+    <input type='button' id='loginbutton' value='Zaloguj' ng-click="login(user)" ng-disabled="logForm.$invalid">
+    </form>
+</div>
+<div ng-show="errorLogin" id="errorLogin">
+    {{ errorMsg }}
+</div>

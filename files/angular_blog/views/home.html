@@ -1,0 +1,16 @@
+<div ng-controller="userController" id="user">
+  Witaj, {{ user.username }}
+  <logout><a href="" ng-click="logout()">Wyloguj</a></logout>
+</div>
+<div>
+<input type="text" ng-model="search" placeholder="Wyszukaj post..." id="search"/>
+</br>
+  <ul id="post-list">
+    <li ng-repeat="post in posts | filter: search" id="content">
+    <h1>{{ post.title }}</h1>
+    </br>
+    <h2>{{ post.content }}</h2>
+    <delete ng-click='remove($index,post.id);'>Usuń</delete>
+    </li>
+  </ul>
+</div>
